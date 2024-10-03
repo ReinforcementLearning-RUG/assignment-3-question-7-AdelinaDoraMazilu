@@ -57,4 +57,10 @@ class MCEvaluator(AbstractEvaluator):
 
         :param episode: A list of (state, action, reward) tuples.
         """
+
+            G = 0
+            for t in reversed(range(len(episode))):
+                state, action, reward = episode[t]
+                G = reward + self.discount_factor * G  
+
         pass
